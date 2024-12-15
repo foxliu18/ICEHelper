@@ -1,8 +1,8 @@
 import sys
 
 from PyQt5 import QtWidgets
-from res.ExcelOffice import qss
-from src.RootManager import RootManager
+from res.QSS.ExcelOffice import qss
+from src.MainController import MainController
 
 
 if __name__== "__main__":
@@ -14,7 +14,7 @@ if __name__== "__main__":
     Qss = qss
     app.setStyleSheet(Qss)
     MainWindow = QtWidgets.QMainWindow()    #QMainWindow装载需要的组件
-    rootManager = RootManager()
+    rootManager = MainController()
     # ui = rootManager.rootUi
     # rootManager.setupUi(rootManager)                                 #执行类中的setupUi方法
     rootManager.show()

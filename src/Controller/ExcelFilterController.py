@@ -2,24 +2,17 @@ import os
 import sys
 from PyQt5.QtGui import QIcon
 
-from res.root_ui import Ui_ICEHelper
-from src.ReadExcelUtil import ReadExcelUtil
-from PyQt5.QtWidgets import QApplication, QMainWindow, QPushButton, QVBoxLayout, QWidget, QLabel, QTableWidgetItem, \
-    QFileDialog
+from res.excel_filter_ui import Ui_excel_filter_form
+from src.utils.ReadExcelUtil import ReadExcelUtil
+from PyQt5.QtWidgets import QMainWindow, QTableWidgetItem, \
+    QFileDialog, QWidget
 
 import threading
 
 
-def resource_path(relative_path):
-    try:
-        # 获取 PyInstaller 打包后的临时目录
-        base_path = sys._MEIPASS
-    except Exception:
-        # 如果在开发环境中，返回当前路径
-        base_path = os.path.abspath(".")
-    return os.path.join(base_path, relative_path)
 
-class RootManager(QMainWindow):
+
+class ExcelFilterController(QWidget):
 
 
     def __init__(self):
@@ -27,13 +20,12 @@ class RootManager(QMainWindow):
         # 创建 ICEHelper 实例
         self.filter_list = None
         self.data = None
-        self.ui = Ui_ICEHelper()
-        self.setWindowIcon(QIcon(resource_path('res/img/apple.svg')))
-        super().setWindowTitle("ICE Helper")  # 设置窗口标题
+        self.ui = Ui_excel_filter_form()
+
         # 设置 UI
         self.ui.setupUi(self)
 
-        self.ui.slt_file_btn.setIcon(QIcon(resource_path('res/img/file70.svg')))
+        self.ui.slt_file_btn.setIcon(QIcon('res/img/file70.svg'))
 
         self.ui.input_tableWidget.horizontalScrollBar().setMinimum(1000)
         self.ui.checkBox.setChecked(True)
@@ -58,13 +50,15 @@ class RootManager(QMainWindow):
     ## 打开过滤
     def open_filter(self):
         input_filter = self.ui.filter_lineEdit.text()
-        if input_filter == "":
-            return
+        if input_filter == "" or input_filter is None:
+            self.ui.out_textb.append("筛选条件为空......")
 
         self.filter_list = input_filter.split(",")
         df_out_dict = self.excelUtil.filter_excel(self.filter_list)
-        self.ui.out_textb.append("筛选完成......")
+        self.ui.out_textb.append("筛选完成")
         for input_filter in self.filter_list:
+            self.ui.out_textb.append("筛选条件：" + input_filter)
+            self.ui.out_textb.append("结果列数：" + str(len(df_out_dict.get(input_filter).columns)))
             self.show_view(df_out_dict.get(input_filter), 0)
 
     def open_file_dialog(self):
@@ -121,10 +115,18 @@ class RootManager(QMainWindow):
 
         if self.data is not None:
            self.show_view(self.data, 5)
-        self.ui.out_textb.append("文件已打开......")
+           self.ui.out_textb.append("文件已打开......")
+        else:
+            self.ui.out_textb.append("文件打开失败......")
+
 
 
     def clicked_file_btn(self):
         # 创建线程，传入任务函数和回调
         task_thread = threading.Thread(target=self.open_excel_file, args=())
+        task_thread.start()  # 启动线程
+
+    def clicked_filter_btn(self):
+        # 创建线程，传入任务函数和回调
+        task_thread = threading.Thread(target=self.open_filter, args=())
         task_thread.start()  # 启动线程

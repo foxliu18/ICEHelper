@@ -7,7 +7,7 @@ class ReadExcelUtil:
     def __init__(self):
         self.df_out_dict = {}
         self.df = None
-        print(" init readExcelUtil")
+        print("init readExcelUtil")
 
 
     def set_file_name(self, file_name):
@@ -37,12 +37,13 @@ class ReadExcelUtil:
         for item in filter_list:
             self.df_out_dict.setdefault(item, pd.DataFrame())
         col_name_list = self.df.columns.values
-
+        new_df = self.df.copy()
         for col in col_name_list:
             for item in filter_list:
                 if col.startswith(item):
+
                     if self.df_out_dict.get(item) is not None:
-                        self.df_out_dict[item][col] = self.df[col].values
+                        self.df_out_dict.get(item)[col] = new_df[col].values
         return self.df_out_dict
 
 
@@ -52,9 +53,11 @@ class ReadExcelUtil:
         if not os.path.exists("./out/"+date_str ):
             os.mkdir("./out/"+date_str )
 
+        new_df = self.df_out_dict.copy()
         if is_split:
             for item in filter_list:
-                self.df_out_dict.get(item).to_csv("./out/"+date_str +item+".xlsx", sheet_name=item)
+                if new_df.get(item) is not None:
+                    new_df[item].to_excel("./out/"+date_str + "/"+item+".xlsx", index=False)
         else:
             first_df = self.df_out_dict.get(filter_list[0])
             out = pd.DataFrame()
