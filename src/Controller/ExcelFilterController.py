@@ -9,8 +9,14 @@ from PyQt5.QtWidgets import QMainWindow, QTableWidgetItem, \
 
 import threading
 
-
-
+def resource_path(relative_path):
+    try:
+        # 获取 PyInstaller 打包后的临时目录
+        base_path = sys._MEIPASS
+    except Exception:
+        # 如果在开发环境中，返回当前路径
+        base_path = os.path.abspath(".")
+    return os.path.join(base_path, relative_path)
 
 class ExcelFilterController(QWidget):
 
@@ -25,7 +31,7 @@ class ExcelFilterController(QWidget):
         # 设置 UI
         self.ui.setupUi(self)
 
-        self.ui.slt_file_btn.setIcon(QIcon('res/img/file70.svg'))
+        self.ui.slt_file_btn.setIcon(QIcon(resource_path('res/img/file70.svg')))
 
         self.ui.input_tableWidget.horizontalScrollBar().setMinimum(1000)
         self.ui.checkBox.setChecked(True)

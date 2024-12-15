@@ -14,7 +14,7 @@ def resource_path(relative_path):
         base_path = sys._MEIPASS
     except Exception:
         # 如果在开发环境中，返回当前路径
-        base_path = os.path.abspath("..")
+        base_path = os.path.abspath(".")
     return os.path.join(base_path, relative_path)
 
 class MainController(QtWidgets.QMainWindow, Ui_ICEHelper):
@@ -22,7 +22,7 @@ class MainController(QtWidgets.QMainWindow, Ui_ICEHelper):
         super(MainController, self).__init__(parent)
         self.setupUi(self)
 
-        self.setWindowIcon(QIcon('res/img/apple.svg'))
+        self.setWindowIcon(QIcon(resource_path('res/img/apple.svg')))
         super().setWindowTitle("ICE Helper")  # 设置窗口标题
 
 

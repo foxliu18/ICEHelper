@@ -1,5 +1,7 @@
+from PyQt5.QtCore import Qt
 from PyQt5.QtGui import QDoubleValidator, QIntValidator
 from PyQt5.QtWidgets import QWidget
+
 from res.BMI_ui import Ui_BMI_Form
 import math
 
@@ -8,18 +10,44 @@ def define_bmi(bmi):
     """计算 BMI 并返回分类结果"""
     if bmi < 18.5:
         category = "低体重"
-        font_format = "color:blue ; font-size: 35px; font-weight: bold; font-family: 微软雅黑;"
+        font_format = "color:blue ; font-size: 35px; font-weight: bold; font-family: 微软雅黑;text-align: center;"
     elif 18.5 <= bmi < 23.9:
         category = "正常"
-        font_format = "color:green ; font-size: 35px; font-weight: bold; font-family: 微软雅黑;"
+        font_format = "color:green ; font-size: 35px; font-weight: bold; font-family: 微软雅黑;text-align: center;"
     elif 24.0 <= bmi < 27.9:
         category = "超重"
-        font_format = "color:orange ; font-size: 35px; font-weight: bold; font-family: 微软雅黑;"
+        font_format = "color:orange ; font-size: 35px; font-weight: bold; font-family: 微软雅黑;text-align: center;"
     else:
         category = "肥胖"
-        font_format = "color:red ; font-size: 35px; font-weight: bold; font-family: 微软雅黑;"
+        font_format = "color:red ; font-size: 35px; font-weight: bold; font-family: 微软雅黑;text-align: center;"
     return bmi, category, font_format
 
+
+def define_fib4(age, fib4):
+    if age is None:
+        return 0
+    if age <= 64:
+        if fib4 < 1.3:
+            state = " 排除"
+            font_style = "color:green ; font-size: 35px; font-weight: bold; font-family: 微软雅黑; text-align: center;"
+        elif 1.3 <= fib4 <= 2.67:
+            state = " 进一步评估"
+            font_style = "color:orange ; font-size: 35px; font-weight: bold; font-family: 微软雅黑; text-align: center;"
+        else :
+            state = " 可能"
+            font_style = "color:red ; font-size: 35px; font-weight: bold; font-family: 微软雅黑;text-align: center;"
+    else:
+        if fib4 < 2.0:
+            state = " 排除"
+            font_style = "color:green ; font-size: 35px; font-weight: bold; font-family: 微软雅黑;text-align: center;"
+        elif 2.0 <= fib4 <= 2.67:
+            state = " 进一步评估"
+            font_style = "color:orange ; font-size: 35px; font-weight: bold; font-family: 微软雅黑;text-align: center;"
+        else :
+            state = " 可能"
+            font_style = "color:red ; font-size: 35px; font-weight: bold; font-family: 微软雅黑;text-align: center;"
+
+    return  state, font_style
 
 class BMIController(QWidget, Ui_BMI_Form):
     def __init__(self):
@@ -93,6 +121,7 @@ class BMIController(QWidget, Ui_BMI_Form):
         self.bmi = bmi
         self.bmi_lcdNumber.display(bmi)
         bmi_res = define_bmi(self.bmi)
+        self.bmi_res_label.setAlignment(Qt.AlignCenter)
         self.bmi_res_label.setText(bmi_res[1])
         self.bmi_res_label.setStyleSheet(bmi_res[2])
 
@@ -140,6 +169,10 @@ class BMIController(QWidget, Ui_BMI_Form):
         fib_4 = (age * fib_ast) / (bcc * math.sqrt(fib_alt))
         self.fib_4 = fib_4
         self.fib4_lcdNumber.display(fib_4)
+
+        res = define_fib4(age, fib_4)
+        self.fib_res_label.setText(res[0])
+        self.fib_res_label.setStyleSheet(res[1])
 
     def calc_ts(self):
         if self.si_lineEdit.text() == "" or self.fec_lineEdit.text() == "":
