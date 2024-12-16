@@ -73,6 +73,9 @@ class BMIController(QWidget, Ui_BMI_Form):
         self.fib_alt_lineEdit.setValidator(QDoubleValidator())
         self.fib_ast_lineEdit.setValidator(QDoubleValidator())
 
+        self.si_lineEdit.setValidator(QDoubleValidator())
+        self.fec_lineEdit.setValidator(QDoubleValidator())
+
         self.height_lineEdit.textChanged.connect(self.calc_bmi)
         self.weight_lineEdit.textChanged.connect(self.calc_bmi)
 
@@ -117,6 +120,8 @@ class BMIController(QWidget, Ui_BMI_Form):
             return
         height = float(self.height_lineEdit.text())
         weight = float(self.weight_lineEdit.text())
+        if weight == 0:
+            return
         bmi = weight / (height * height)
         self.bmi = bmi
         self.bmi_lcdNumber.display(bmi)
@@ -154,6 +159,8 @@ class BMIController(QWidget, Ui_BMI_Form):
 
         ast = float(self.AST_lineEdit.text())
         plt = float(self.PLT_lineEdit.text())
+        if plt == 0:
+            return
         arp = ast / plt * 100
         self.arp = arp
         self.arp_lcdNumber.display(arp)
@@ -166,6 +173,8 @@ class BMIController(QWidget, Ui_BMI_Form):
         fib_alt = float(self.fib_alt_lineEdit.text())
         fib_ast = float(self.fib_ast_lineEdit.text())
 
+        if bcc * math.sqrt(fib_alt) == 0:
+            return
         fib_4 = (age * fib_ast) / (bcc * math.sqrt(fib_alt))
         self.fib_4 = fib_4
         self.fib4_lcdNumber.display(fib_4)
@@ -180,6 +189,8 @@ class BMIController(QWidget, Ui_BMI_Form):
 
         si = float(self.si_lineEdit.text())
         fec = float(self.fec_lineEdit.text())
+        if fec == 0:
+            return
 
         ts = si / fec * 100
         self.ts = ts
