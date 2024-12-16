@@ -120,7 +120,7 @@ class BMIController(QWidget, Ui_BMI_Form):
             return
         height = float(self.height_lineEdit.text())
         weight = float(self.weight_lineEdit.text())
-        if weight == 0:
+        if height == 0:
             self.bmi = 0
             self.bmi_lcdNumber.display(0)
             self.bmi_res_label.setText("")
