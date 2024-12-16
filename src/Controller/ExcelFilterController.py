@@ -51,8 +51,12 @@ class ExcelFilterController(QWidget):
 
     def output_file(self):
         is_split = self.ui.checkBox.isChecked()
-        if self.excelUtil.write_to_excel(self.filter_list, is_split):
-            self.ui.out_textb.append("输出完成......")
+        res = self.excelUtil.write_to_excel(self.filter_list, is_split)
+        if res[0]:
+            self.ui.out_textb.append(res[1])
+        else:
+            self.ui.out_textb.append("创建路径失败: " + res[1])
+            self.ui.out_textb.append( "请尝试手动创建路径：" + res[2])
     ## 打开过滤
     def open_filter(self):
         input_filter = self.ui.filter_lineEdit.text()
