@@ -41,7 +41,6 @@ class ReadExcelUtil:
         for col in col_name_list:
             for item in filter_list:
                 if col.startswith(item):
-
                     if self.df_out_dict.get(item) is not None:
                         self.df_out_dict.get(item)[col] = new_df[col].values
         return self.df_out_dict
@@ -51,7 +50,8 @@ class ReadExcelUtil:
         now = datetime.now()
         date_str = now.strftime("%Y%m%d/")
         if not os.path.exists("./out/"+date_str ):
-            os.mkdir("./out/"+date_str )
+            os.mkdir("./out/" )
+            os.mkdir("./out/" + date_str)
 
         new_df = self.df_out_dict.copy()
         if is_split:
