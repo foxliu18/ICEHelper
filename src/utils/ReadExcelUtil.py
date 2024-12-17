@@ -73,5 +73,5 @@ class ReadExcelUtil:
                     out[self.df_out_dict.get(item).columns[col]] = self.df_out_dict.get(item).columns[col].values
 
             out.to_excel("./out/"+date_str +"out_bind.xlsx")
-        return True, "输出成功"
+        return True, "输出成功..."
 
