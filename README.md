@@ -11,7 +11,7 @@
 + mac 打包命令
 
   ``` shell
-  pyinstaller --onefile --windowed --icon res/img/apple.ico --add-data res/img/file70.svg:res/img --add-data res/img/apple.svg:res/img -D --name ICEHelper_mac Main.py
+  pyinstaller --onefile --windowed --icon res/img/apple.ico --add-data res/img/file70.svg:res/img --add-data res/img/apple.svg:res/img --name ICEHelper_mac Main.py
   ```
 
 + win 打包命令
