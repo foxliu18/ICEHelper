@@ -17,6 +17,7 @@
 + win 打包命令
   ```shell
   pyinstaller --add-data 'res/img/file70.svg:res/img/' --add-data 'res/img/apple.svg:res/img/' --icon './res/img/apple.ico' -wF --name ICEHelper_x64  main.py
+  pyinstaller --add-data '.\res\QtSheetStyle.qrc:.\res' --icon './res/img/apple.ico' -wF --name ICEHelper_x64  main.py
   ```
 
   
