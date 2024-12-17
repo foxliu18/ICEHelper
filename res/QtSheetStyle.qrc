@@ -1,0 +1,12 @@
+<RCC>
+    <qresource prefix="/res">
+        <file>img/apple.svg</file>
+        <file>img/apple.ico</file>
+        <file>img/file70.svg</file>
+        <file>QSS/Aqua.qss</file>
+        <file>QSS/ExcelOffice.qss</file>
+        <file>QSS/MacOS.qss</file>
+        <file>QSS/ManjaroMix.qss</file>
+        <file>QSS/Obit.qss</file>
+    </qresource>
+</RCC>

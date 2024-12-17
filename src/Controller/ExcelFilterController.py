@@ -6,7 +6,7 @@ from res.excel_filter_ui import Ui_excel_filter_form
 from src.utils.ReadExcelUtil import ReadExcelUtil
 from PyQt5.QtWidgets import QMainWindow, QTableWidgetItem, \
     QFileDialog, QWidget
-
+import res.QtSheetStyle_rc
 import threading
 
 def resource_path(relative_path):
@@ -31,7 +31,7 @@ class ExcelFilterController(QWidget):
         # 设置 UI
         self.ui.setupUi(self)
 
-        self.ui.slt_file_btn.setIcon(QIcon(resource_path('res/img/file70.svg')))
+        self.ui.slt_file_btn.setIcon(QIcon(':/res/img/file70.svg'))
 
         self.ui.input_tableWidget.horizontalScrollBar().setMinimum(1000)
         self.ui.checkBox.setChecked(True)
