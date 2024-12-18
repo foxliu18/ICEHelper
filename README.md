@@ -11,7 +11,7 @@
 + mac 打包命令
 
   ``` shell
-  pyinstaller -D --icon res/img/apple.ico --add-data res/img/file70.svg:res/img --add-data res/img/apple.svg:res/img --hidden-import PyQt5.sip --name ICEHelper_mac Main.py
+  pyinstaller -wD --icon res/img/apple.ico --add-data res/img/file70.svg:res/img --add-data res/img/apple.svg:res/img --hidden-import PyQt5.sip --name ICEHelper_mac Main.py
   ```
 
 + win 打包命令
