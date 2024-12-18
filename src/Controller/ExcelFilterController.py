@@ -1,5 +1,4 @@
 import os
-import sys
 from PyQt5.QtGui import QIcon
 
 from res.excel_filter_ui import Ui_excel_filter_form
@@ -9,14 +8,14 @@ from PyQt5.QtWidgets import QMainWindow, QTableWidgetItem, \
 import res.QtSheetStyle_rc
 import threading
 
-def resource_path(relative_path):
-    try:
-        # 获取 PyInstaller 打包后的临时目录
-        base_path = sys._MEIPASS
-    except Exception:
-        # 如果在开发环境中，返回当前路径
-        base_path = os.path.abspath(".")
-    return os.path.join(base_path, relative_path)
+# def resource_path(relative_path):
+#     try:
+#         # 获取 PyInstaller 打包后的临时目录
+#         base_path = sys._MEIPASS
+#     except Exception:
+#         # 如果在开发环境中，返回当前路径
+#         base_path = os.path.abspath(".")
+#     return os.path.join(base_path, relative_path)
 
 class ExcelFilterController(QWidget):
 
@@ -45,7 +44,7 @@ class ExcelFilterController(QWidget):
     ## 初始化链接
     def init_connect(self):
         self.ui.file_read_pbtn.clicked.connect(self.clicked_file_btn)
-        self.ui.filter_pbtn.clicked.connect(self.open_filter)
+        self.ui.filter_pbtn.clicked.connect(self.clicked_filter_btn)
         self.ui.output_pushButton.clicked.connect(self.output_file)
         self.ui.slt_file_btn.clicked.connect(self.open_file_dialog)
 
@@ -62,6 +61,7 @@ class ExcelFilterController(QWidget):
         input_filter = self.ui.filter_lineEdit.text()
         if input_filter == "" or input_filter is None:
             self.ui.out_textb.append("筛选条件为空......")
+            return
 
         self.filter_list = input_filter.split(",")
         df_out_dict = self.excelUtil.filter_excel(self.filter_list)
@@ -112,7 +112,7 @@ class ExcelFilterController(QWidget):
         self.ui.out_textb.append("打开文件中......")
         file_name = self.ui.file_lineEdit.text()
         sheet_name = self.ui.sheet_lineEdit.text()
-        print("open excel file" + file_name)
+
         if not os.path.exists(file_name):
             self.ui.out_textb.append("文件不存在：" + file_name)
             return
@@ -137,6 +137,8 @@ class ExcelFilterController(QWidget):
         task_thread.start()  # 启动线程
 
     def clicked_filter_btn(self):
+        if self.data is None:
+            return
         # 创建线程，传入任务函数和回调
         task_thread = threading.Thread(target=self.open_filter, args=())
         task_thread.start()  # 启动线程
