@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 
-# Form implementation generated from reading ui file 'root.ui'
+# Form implementation generated from reading ui file 'D:\code\ICEHelper\res/root.ui'
 #
 # Created by: PyQt5 UI code generator 5.15.11
 #
