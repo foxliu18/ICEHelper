@@ -73,6 +73,9 @@ class BMIController(QWidget, Ui_BMI_Form):
         self.fib_alt_lineEdit.setValidator(QDoubleValidator())
         self.fib_ast_lineEdit.setValidator(QDoubleValidator())
 
+        self.si_lineEdit.setValidator(QDoubleValidator())
+        self.fec_lineEdit.setValidator(QDoubleValidator())
+
         self.height_lineEdit.textChanged.connect(self.calc_bmi)
         self.weight_lineEdit.textChanged.connect(self.calc_bmi)
 
@@ -117,6 +120,11 @@ class BMIController(QWidget, Ui_BMI_Form):
             return
         height = float(self.height_lineEdit.text())
         weight = float(self.weight_lineEdit.text())
+        if height == 0:
+            self.bmi = 0
+            self.bmi_lcdNumber.display(0)
+            self.bmi_res_label.setText("")
+            return
         bmi = weight / (height * height)
         self.bmi = bmi
         self.bmi_lcdNumber.display(bmi)
@@ -126,24 +134,24 @@ class BMIController(QWidget, Ui_BMI_Form):
         self.bmi_res_label.setStyleSheet(bmi_res[2])
 
     def log_bmi(self):
-        if self.height_lineEdit.text() == "" or self.weight_lineEdit.text() == "":
+        if self.height_lineEdit.text() == "" or self.weight_lineEdit.text() == "" or self.bmi == 0:
             return
         self.textBrowser.append("身高: " + self.height_lineEdit.text() +"   体重: " + self.weight_lineEdit.text() + "  ===>   BMI: " + str(self.bmi))
 
     def log_arp(self):
-        if self.AST_lineEdit.text() == "" or self.PLT_lineEdit.text() == "":
+        if self.AST_lineEdit.text() == "" or self.PLT_lineEdit.text() == "" or self.arp == 0:
             return
         self.textBrowser.append("AST: " + self.AST_lineEdit.text() +"   PLT: " + self.PLT_lineEdit.text() + "  ===>   天门冬氨酸氨基转移酶与血小板比值: " + str(self.arp))
 
     def log_fib4(self):
-        if self.age_lineEdit.text() == "" or self.bcc_lineEdit.text() == "" or self.fib_alt_lineEdit.text() == ""  or self.fib_ast_lineEdit.text() == "":
+        if self.fib_4 == 0 or self.age_lineEdit.text() == "" or self.bcc_lineEdit.text() == "" or self.fib_alt_lineEdit.text() == ""  or self.fib_ast_lineEdit.text() == "":
             return
         self.textBrowser.append("年龄: " + self.age_lineEdit.text() +"   血小板计数: " + self.bcc_lineEdit.text()
                                 + "   ALT: " + self.fib_alt_lineEdit.text() + "   AST: " + self.fib_ast_lineEdit.text()
                                 + "  ===>   FIB-4慢性肝病患者肝纤维化: " + str(self.fib_4))
 
     def log_ts(self):
-        if self.si_lineEdit.text() == "" or self.fec_lineEdit.text() == "":
+        if self.ts == 0 or self.si_lineEdit.text() == "" or self.fec_lineEdit.text() == "":
             return
         self.textBrowser.append("血清铁: " + self.si_lineEdit.text() +"   总铁结合能力: " + self.fec_lineEdit.text()
                                 + "  ===>   转铁蛋白饱和度: " + str(self.ts))
@@ -154,6 +162,10 @@ class BMIController(QWidget, Ui_BMI_Form):
 
         ast = float(self.AST_lineEdit.text())
         plt = float(self.PLT_lineEdit.text())
+        if plt == 0:
+            self.arp = 0
+            self.arp_lcdNumber.display(self.arp)
+            return
         arp = ast / plt * 100
         self.arp = arp
         self.arp_lcdNumber.display(arp)
@@ -166,6 +178,11 @@ class BMIController(QWidget, Ui_BMI_Form):
         fib_alt = float(self.fib_alt_lineEdit.text())
         fib_ast = float(self.fib_ast_lineEdit.text())
 
+        if bcc * math.sqrt(fib_alt) == 0:
+            self.fib_4 = 0
+            self.fib4_lcdNumber.display(self.fib_4)
+            self.fib_res_label.setText("")
+            return
         fib_4 = (age * fib_ast) / (bcc * math.sqrt(fib_alt))
         self.fib_4 = fib_4
         self.fib4_lcdNumber.display(fib_4)
@@ -180,6 +197,10 @@ class BMIController(QWidget, Ui_BMI_Form):
 
         si = float(self.si_lineEdit.text())
         fec = float(self.fec_lineEdit.text())
+        if fec == 0:
+            self.ts = 0
+            self.ts_lcdNumber.display(self.ts)
+            return
 
         ts = si / fec * 100
         self.ts = ts

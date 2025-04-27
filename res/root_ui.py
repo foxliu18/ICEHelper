@@ -14,8 +14,8 @@ from PyQt5 import QtCore, QtGui, QtWidgets
 class Ui_ICEHelper(object):
     def setupUi(self, ICEHelper):
         ICEHelper.setObjectName("ICEHelper")
-        ICEHelper.resize(980, 724)
-        ICEHelper.setMinimumSize(QtCore.QSize(850, 700))
+        ICEHelper.resize(1088, 724)
+        ICEHelper.setMinimumSize(QtCore.QSize(1080, 700))
         self.centralwidget = QtWidgets.QWidget(ICEHelper)
         self.centralwidget.setObjectName("centralwidget")
         self.gridLayout = QtWidgets.QGridLayout(self.centralwidget)
@@ -31,7 +31,7 @@ class Ui_ICEHelper(object):
         self.gridLayout.addWidget(self.stackedWidget, 0, 0, 1, 1)
         ICEHelper.setCentralWidget(self.centralwidget)
         self.menuBar = QtWidgets.QMenuBar(ICEHelper)
-        self.menuBar.setGeometry(QtCore.QRect(0, 0, 980, 21))
+        self.menuBar.setGeometry(QtCore.QRect(0, 0, 1088, 26))
         self.menuBar.setObjectName("menuBar")
         self.menuTools = QtWidgets.QMenu(self.menuBar)
         self.menuTools.setObjectName("menuTools")

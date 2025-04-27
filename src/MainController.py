@@ -1,13 +1,14 @@
 import os
 import sys
 
-from PyQt5 import QtCore, QtGui, QtWidgets
+from PyQt5 import QtWidgets
 from PyQt5.QtGui import QIcon
-from PyQt5.QtWidgets import QStackedWidget
-
+import res.QtSheetStyle_rc
 from res.root_ui import Ui_ICEHelper
-from src.Controller.ExcelFilterController import ExcelFilterController
 from src.Controller.BMIController import BMIController
+from src.Controller.ExcelFilterController import ExcelFilterController
+
+
 def resource_path(relative_path):
     try:
         # 获取 PyInstaller 打包后的临时目录
@@ -22,7 +23,7 @@ class MainController(QtWidgets.QMainWindow, Ui_ICEHelper):
         super(MainController, self).__init__(parent)
         self.setupUi(self)
 
-        self.setWindowIcon(QIcon(resource_path('res/img/apple.svg')))
+        self.setWindowIcon(QIcon(':/res/img/apple.svg'))
         super().setWindowTitle("ICE Helper")  # 设置窗口标题
 
 
