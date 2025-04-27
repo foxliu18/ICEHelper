@@ -3,8 +3,7 @@ import sys
 
 from PyQt5 import QtWidgets
 from PyQt5.QtGui import QIcon
-import res.QtSheetStyle_rc
-from res.root_ui import Ui_ICEHelper
+from ui.root_ui import Ui_ICEHelper
 from src.Controller.BMIController import BMIController
 from src.Controller.ExcelFilterController import ExcelFilterController
 
@@ -23,7 +22,7 @@ class MainController(QtWidgets.QMainWindow, Ui_ICEHelper):
         super(MainController, self).__init__(parent)
         self.setupUi(self)
 
-        self.setWindowIcon(QIcon(':/res/img/apple.svg'))
+        self.setWindowIcon(QIcon(':/res/img/cardano.icns'))
         super().setWindowTitle("ICE Helper")  # 设置窗口标题
 
 

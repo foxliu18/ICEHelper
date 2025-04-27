@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 
-# Form implementation generated from reading ui file 'excel_filter.ui'
+# Form implementation generated from reading ui file '/Users/liu/Code/ICEHelper/ui/excel_filter.ui'
 #
 # Created by: PyQt5 UI code generator 5.15.11
 #
@@ -14,7 +14,7 @@ from PyQt5 import QtCore, QtGui, QtWidgets
 class Ui_excel_filter_form(object):
     def setupUi(self, excel_filter_form):
         excel_filter_form.setObjectName("excel_filter_form")
-        excel_filter_form.resize(818, 668)
+        excel_filter_form.resize(824, 674)
         self.gridLayout = QtWidgets.QGridLayout(excel_filter_form)
         self.gridLayout.setObjectName("gridLayout")
         self.frame = QtWidgets.QFrame(excel_filter_form)
@@ -63,11 +63,51 @@ class Ui_excel_filter_form(object):
         self.filter_label.setObjectName("filter_label")
         self.horizontalLayout_2.addWidget(self.filter_label)
         self.filter_lineEdit = QtWidgets.QLineEdit(self.frame)
-        self.filter_lineEdit.setMinimumSize(QtCore.QSize(520, 30))
+        self.filter_lineEdit.setMinimumSize(QtCore.QSize(400, 30))
         self.filter_lineEdit.setMaximumSize(QtCore.QSize(16777215, 50))
         self.filter_lineEdit.setPlaceholderText("")
         self.filter_lineEdit.setObjectName("filter_lineEdit")
         self.horizontalLayout_2.addWidget(self.filter_lineEdit)
+        self.filter_type_comboBox = QtWidgets.QComboBox(self.frame)
+        self.filter_type_comboBox.setMinimumSize(QtCore.QSize(150, 32))
+        self.filter_type_comboBox.setStyleSheet("QComboBox {\n"
+"        border: 1px solid #c0c0c0;\n"
+"        border-radius: 4px;\n"
+"        padding: 3px 18px 3px 8px;\n"
+"        background: white;\n"
+"        selection-background-color: #0078d7;\n"
+"    }\n"
+"QComboBox::drop-down {\n"
+"           subcontrol-origin: padding;\n"
+"            subcontrol-position: top right;\n"
+"            width: 12px;\n"
+"            border-left: 1px solid #c0c0c0;\n"
+"}\n"
+"QComboBox::down-arrow {\n"
+"        image: url(res/img/combobox_on.svg);  \n"
+"}\n"
+"/* 下拉列表样式 */\n"
+"QComboBox QAbstractItemView {\n"
+"    border: 1px solid #c0c0c0;\n"
+"    background: white;\n"
+"    selection-background-color: #0078d7;  /* 选中项背景色 */\n"
+"    selection-color: white;  /* 选中项文字颜色 */\n"
+"    outline: 0;  /* 移除焦点虚线框 */\n"
+"    min-width: 150px;  /* 最小宽度 */\n"
+"}\n"
+"\n"
+"/* 下拉列表中的项 */\n"
+"QComboBox QAbstractItemView::item {\n"
+"    padding: 4px 8px;\n"
+"    height: 20px;\n"
+"}\n"
+"\n"
+"/* 下拉列表中的项 - 悬停状态 */\n"
+"QComboBox QAbstractItemView::item:hover {\n"
+"    background-color: #e0e0e0;\n"
+"}")
+        self.filter_type_comboBox.setObjectName("filter_type_comboBox")
+        self.horizontalLayout_2.addWidget(self.filter_type_comboBox)
         self.filter_pbtn = QtWidgets.QPushButton(self.frame)
         self.filter_pbtn.setMinimumSize(QtCore.QSize(80, 30))
         self.filter_pbtn.setMaximumSize(QtCore.QSize(80, 60))

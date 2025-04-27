@@ -177,47 +177,41 @@ QSlider::sub-page:vertical {
 QSlider::add-page:horizontal:disabled, QSlider::sub-page:horizontal:disabled, QSlider::add-page:vertical:disabled, QSlider::sub-page:vertical:disabled {
     background: #b9b9b9;
 }
-QComboBox, QFontComboBox {
-    border-width: 2px;
-    border-radius: 8px;
-    border-style: solid;
-    border-top-color: qlineargradient(spread:pad, x1:0.5, y1:1, x2:0.5, y2:0, stop:0 #c1c9cf, stop:1 #d2d8dd);
-    border-right-color: qlineargradient(spread:pad, x1:0, y1:0, x2:1, y2:0, stop:0 #c1c9cf, stop:1 #d2d8dd);
-    border-bottom-color: qlineargradient(spread:pad, x1:0.5, y1:0, x2:0.5, y2:1, stop:0 #c1c9cf, stop:1 #d2d8dd);
-    border-left-color: qlineargradient(spread:pad, x1:1, y1:0, x2:0, y2:0, stop:0 #c1c9cf, stop:1 #d2d8dd);
-    background-color: #f4f4f4;
-    color: #272727;
-    padding-left: 5px;
-}
-QComboBox:editable, QComboBox:!editable, QComboBox::drop-down:editable, QComboBox:!editable:on, QComboBox::drop-down:editable:on {
-    background: #ffffff;
-}
+QComboBox {
+        border: 1px solid #c0c0c0;
+        border-radius: 4px;
+        padding: 3px 18px 3px 8px;
+        background: white;
+        selection-background-color: #0078d7;
+    }
 QComboBox::drop-down {
-    subcontrol-origin: padding;
-    subcontrol-position: top right;
-    width: 15px;
-    color: #272727;
-    border-left-width: 1px;
-    border-left-color: darkgray;
-    border-left-style: solid;
-    border-top-right-radius: 3px;
-    border-bottom-right-radius: 3px;
+       	subcontrol-origin: padding;
+    		subcontrol-position: top right;
+    		width: 12px;
+    		border-left: 1px solid #c0c0c0;
 }
 QComboBox::down-arrow {
-    image: url(/usr/share/icons/Adwaita/16x16/actions/go-down-symbolic.symbolic.png); /*Adawaita icon thene*/
+        image: url(res/img/combobox_on.svg);
+}
+/* 下拉列表样式 */
+QComboBox QAbstractItemView {
+    border: 1px solid #c0c0c0;
+    background: white;
+    selection-background-color: #0078d7;  /* 选中项背景色 */
+    selection-color: white;  /* 选中项文字颜色 */
+    outline: 0;  /* 移除焦点虚线框 */
+    min-width: 150px;  /* 最小宽度 */
 }
 
-QComboBox::down-arrow:on {
-    top: 1px;
-    left: 1px;
+/* 下拉列表中的项 */
+QComboBox QAbstractItemView::item {
+    padding: 4px 8px;
+    height: 20px;
 }
-QComboBox QAbstractItemView {
-    border: 1px solid darkgray;
-    border-radius: 8px;
-    selection-background-color: #dadada;
-    selection-color: #272727;
-    color: #272727;
-    background: white;
+
+/* 下拉列表中的项 - 悬停状态 */
+QComboBox QAbstractItemView::item:hover {
+    background-color: #e0e0e0;
 }
 QLabel, QCheckBox, QRadioButton {
     color: #272727;

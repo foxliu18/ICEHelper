@@ -2,7 +2,7 @@ from PyQt5.QtCore import Qt
 from PyQt5.QtGui import QDoubleValidator, QIntValidator
 from PyQt5.QtWidgets import QWidget
 
-from res.BMI_ui import Ui_BMI_Form
+from ui.BMI_ui import Ui_BMI_Form
 import math
 
 
