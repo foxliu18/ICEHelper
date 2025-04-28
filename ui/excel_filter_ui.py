@@ -70,42 +70,7 @@ class Ui_excel_filter_form(object):
         self.horizontalLayout_2.addWidget(self.filter_lineEdit)
         self.filter_type_comboBox = QtWidgets.QComboBox(self.frame)
         self.filter_type_comboBox.setMinimumSize(QtCore.QSize(150, 32))
-        self.filter_type_comboBox.setStyleSheet("QComboBox {\n"
-"        border: 1px solid #c0c0c0;\n"
-"        border-radius: 4px;\n"
-"        padding: 3px 18px 3px 8px;\n"
-"        background: white;\n"
-"        selection-background-color: #0078d7;\n"
-"    }\n"
-"QComboBox::drop-down {\n"
-"           subcontrol-origin: padding;\n"
-"            subcontrol-position: top right;\n"
-"            width: 12px;\n"
-"            border-left: 1px solid #c0c0c0;\n"
-"}\n"
-"QComboBox::down-arrow {\n"
-"        image: url(res/img/combobox_on.svg);  \n"
-"}\n"
-"/* 下拉列表样式 */\n"
-"QComboBox QAbstractItemView {\n"
-"    border: 1px solid #c0c0c0;\n"
-"    background: white;\n"
-"    selection-background-color: #0078d7;  /* 选中项背景色 */\n"
-"    selection-color: white;  /* 选中项文字颜色 */\n"
-"    outline: 0;  /* 移除焦点虚线框 */\n"
-"    min-width: 150px;  /* 最小宽度 */\n"
-"}\n"
-"\n"
-"/* 下拉列表中的项 */\n"
-"QComboBox QAbstractItemView::item {\n"
-"    padding: 4px 8px;\n"
-"    height: 20px;\n"
-"}\n"
-"\n"
-"/* 下拉列表中的项 - 悬停状态 */\n"
-"QComboBox QAbstractItemView::item:hover {\n"
-"    background-color: #e0e0e0;\n"
-"}")
+        self.filter_type_comboBox.setStyleSheet("")
         self.filter_type_comboBox.setObjectName("filter_type_comboBox")
         self.horizontalLayout_2.addWidget(self.filter_type_comboBox)
         self.filter_pbtn = QtWidgets.QPushButton(self.frame)

@@ -175,42 +175,7 @@
            </size>
           </property>
           <property name="styleSheet">
-           <string notr="true">QComboBox {
-        border: 1px solid #c0c0c0;
-        border-radius: 4px;
-        padding: 3px 18px 3px 8px;
-        background: white;
-        selection-background-color: #0078d7;
-    }
-QComboBox::drop-down {
-       	subcontrol-origin: padding;
-    		subcontrol-position: top right;
-    		width: 12px;
-    		border-left: 1px solid #c0c0c0;
-}
-QComboBox::down-arrow {
-        image: url(res/img/combobox_on.svg);  
-}
-/* 下拉列表样式 */
-QComboBox QAbstractItemView {
-    border: 1px solid #c0c0c0;
-    background: white;
-    selection-background-color: #0078d7;  /* 选中项背景色 */
-    selection-color: white;  /* 选中项文字颜色 */
-    outline: 0;  /* 移除焦点虚线框 */
-    min-width: 150px;  /* 最小宽度 */
-}
-
-/* 下拉列表中的项 */
-QComboBox QAbstractItemView::item {
-    padding: 4px 8px;
-    height: 20px;
-}
-
-/* 下拉列表中的项 - 悬停状态 */
-QComboBox QAbstractItemView::item:hover {
-    background-color: #e0e0e0;
-}</string>
+           <string notr="true"/>
           </property>
          </widget>
         </item>

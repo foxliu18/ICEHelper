@@ -200,7 +200,7 @@ QComboBox QAbstractItemView {
     selection-background-color: #0078d7;  /* 选中项背景色 */
     selection-color: white;  /* 选中项文字颜色 */
     outline: 0;  /* 移除焦点虚线框 */
-    min-width: 150px;  /* 最小宽度 */
+    min-width: 145px;  /* 最小宽度 */
 }
 
 /* 下拉列表中的项 */
