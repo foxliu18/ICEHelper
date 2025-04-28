@@ -14,7 +14,7 @@ from PyQt5 import QtCore, QtGui, QtWidgets
 class Ui_excel_filter_form(object):
     def setupUi(self, excel_filter_form):
         excel_filter_form.setObjectName("excel_filter_form")
-        excel_filter_form.resize(824, 674)
+        excel_filter_form.resize(894, 674)
         self.gridLayout = QtWidgets.QGridLayout(excel_filter_form)
         self.gridLayout.setObjectName("gridLayout")
         self.frame = QtWidgets.QFrame(excel_filter_form)
@@ -38,8 +38,17 @@ class Ui_excel_filter_form(object):
         self.file_lineEdit.setObjectName("file_lineEdit")
         self.horizontalLayout.addWidget(self.file_lineEdit)
         self.slt_file_btn = QtWidgets.QPushButton(self.frame)
-        self.slt_file_btn.setMinimumSize(QtCore.QSize(30, 30))
-        self.slt_file_btn.setMaximumSize(QtCore.QSize(50, 50))
+        sizePolicy = QtWidgets.QSizePolicy(QtWidgets.QSizePolicy.Fixed, QtWidgets.QSizePolicy.Fixed)
+        sizePolicy.setHorizontalStretch(0)
+        sizePolicy.setVerticalStretch(0)
+        sizePolicy.setHeightForWidth(self.slt_file_btn.sizePolicy().hasHeightForWidth())
+        self.slt_file_btn.setSizePolicy(sizePolicy)
+        self.slt_file_btn.setMinimumSize(QtCore.QSize(32, 30))
+        self.slt_file_btn.setMaximumSize(QtCore.QSize(70, 70))
+        self.slt_file_btn.setStyleSheet("#slt_file_btn{\n"
+"border-image: url(:/res/img/file64.svg)\n"
+"}\n"
+"")
         self.slt_file_btn.setText("")
         self.slt_file_btn.setObjectName("slt_file_btn")
         self.horizontalLayout.addWidget(self.slt_file_btn)
@@ -124,3 +133,4 @@ class Ui_excel_filter_form(object):
         self.filter_pbtn.setText(_translate("excel_filter_form", "筛选"))
         self.checkBox.setText(_translate("excel_filter_form", "分文件输出"))
         self.output_pushButton.setText(_translate("excel_filter_form", "输出"))
+import res.QtSheetStyle_rc

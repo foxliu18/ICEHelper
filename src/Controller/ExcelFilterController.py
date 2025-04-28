@@ -29,7 +29,7 @@ class ExcelFilterController(QWidget):
         # 设置 UI
         self.ui.setupUi(self)
 
-        self.ui.slt_file_btn.setIcon(QIcon(':/res/img/file70.svg'))
+        # self.ui.slt_file_btn.setIcon(QIcon(':/res/img/file70.svg'))
 
         self.ui.input_tableWidget.horizontalScrollBar().setMinimum(1000)
         self.ui.checkBox.setChecked(True)

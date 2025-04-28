@@ -1,9 +1,8 @@
 import os
 import sys
-
+import res.QtSheetStyle_rc
 from PyQt5 import QtWidgets
 from PyQt5.QtCore import QFile, QTextStream
-import ui.QtSheetStyle_rc
 from src.MainController import MainController
 def resource_path(relative_path):
     try:
