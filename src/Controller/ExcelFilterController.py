@@ -33,7 +33,7 @@ class ExcelFilterController(QWidget):
 
         self.ui.input_tableWidget.horizontalScrollBar().setMinimum(1000)
         self.ui.checkBox.setChecked(True)
-        self.ui.checkBox.setEnabled(False)
+        self.ui.checkBox.setEnabled(True)
         self.ui.filter_type_comboBox.addItems(['起始', '包含', '结尾'])
         self.ui.filter_type_comboBox.setCurrentText('起始')
 
@@ -52,7 +52,7 @@ class ExcelFilterController(QWidget):
     def output_file(self):
         is_split = self.ui.checkBox.isChecked()
         if self.filter_list is None:
-            return;
+            return
         res = self.excelUtil.write_to_excel(self.filter_list, is_split)
         if res[0]:
             self.ui.out_textb.append(res[1])
@@ -64,9 +64,14 @@ class ExcelFilterController(QWidget):
         input_filter = self.ui.filter_lineEdit.text()
         if input_filter == "" or input_filter is None:
             self.ui.out_textb.append("筛选条件为空......")
+            self.show_view(self.data, 5)
             return
-
-        self.filter_list = input_filter.split(",")
+        if "," in input_filter:
+            self.filter_list = input_filter.split(",")
+        elif "，" in input_filter:
+            self.filter_list = input_filter.split("，")
+        else:
+            self.filter_list = [input_filter]
         df_out_dict = self.excelUtil.filter_excel(self.filter_list, self.ui.filter_type_comboBox.currentIndex())
 
         self.ui.out_textb.append("筛选完成")
@@ -124,7 +129,6 @@ class ExcelFilterController(QWidget):
             self.ui.out_textb.append("文件必须是xlsx或xlx：" + file_name)
             return
         if self.excelUtil.set_file_name(file_name):
-            print(file_name)
             self.data = self.excelUtil.open_file(sheet_name)
 
         if self.data is not None:
@@ -144,5 +148,6 @@ class ExcelFilterController(QWidget):
         if self.data is None:
             return
         # 创建线程，传入任务函数和回调
-        task_thread = threading.Thread(target=self.open_filter, args=())
-        task_thread.start()  # 启动线程
+        self.open_filter()
+        # task_thread = threading.Thread(target=self.open_filter, args=())
+        # task_thread.start()  # 启动线程

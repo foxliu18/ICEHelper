@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 
-# Form implementation generated from reading ui file '/Users/liu/Code/ICEHelper/ui/excel_filter.ui'
+# Form implementation generated from reading ui file 'D:\code\ICEHelper\ui/excel_filter.ui'
 #
 # Created by: PyQt5 UI code generator 5.15.11
 #
@@ -134,6 +134,7 @@ class Ui_excel_filter_form(object):
         self.checkBox = QtWidgets.QCheckBox(self.frame)
         self.checkBox.setMinimumSize(QtCore.QSize(100, 40))
         self.checkBox.setMaximumSize(QtCore.QSize(150, 40))
+        self.checkBox.setChecked(True)
         self.checkBox.setObjectName("checkBox")
         self.horizontalLayout_3.addWidget(self.checkBox)
         self.output_pushButton = QtWidgets.QPushButton(self.frame)

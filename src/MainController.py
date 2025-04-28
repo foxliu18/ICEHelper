@@ -22,7 +22,7 @@ class MainController(QtWidgets.QMainWindow, Ui_ICEHelper):
         super(MainController, self).__init__(parent)
         self.setupUi(self)
 
-        self.setWindowIcon(QIcon(':/res/img/cardano.icns'))
+        self.setWindowIcon(QIcon(':/res/img/apple.svg'))
         super().setWindowTitle("ICE Helper")  # 设置窗口标题
 
 
