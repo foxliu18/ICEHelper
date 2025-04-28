@@ -197,7 +197,7 @@ QComboBox::down-arrow {
 QComboBox QAbstractItemView {
     border: 1px solid #c0c0c0;
     background: white;
-    selection-background-color: #0078d7;  /* 选中项背景色 */
+    selection-background-color: #99FFFF;  /* 选中项背景色 */
     selection-color: white;  /* 选中项文字颜色 */
     outline: 0;  /* 移除焦点虚线框 */
     min-width: 145px;  /* 最小宽度 */
@@ -226,7 +226,7 @@ QCheckBox:disabled, QRadioButton:disabled {
 
 QCheckBox:hover {
     border-radius:4px;
-    border-style:solid;
+    border-style: solid;
     padding-left: 1px;
     padding-right: 1px;
     padding-bottom: 1px;
@@ -238,7 +238,7 @@ QCheckBox::indicator:checked {
     image: url(/usr/share/icons/Adwaita/16x16/actions/object-select-symbolic.symbolic.png);
     height: 15px;
     width: 15px;
-    border-style:solid;
+    border-style: solid;
     border-width: 1px;
     border-color: #48a5fd;
     color: #ffffff;
@@ -249,7 +249,7 @@ QCheckBox::indicator:unchecked {
     
     height: 15px;
     width: 15px;
-    border-style:solid;
+    border-style: solid;
     border-width: 1px;
     border-color: #48a5fd;
     border-radius: 3px;
@@ -284,7 +284,7 @@ QMenu::item {
     background-color: #e0e0e0;
 }
 QTabWidget {
-    color:rgb(0,0,0);
+    color: rgb(0,0,0);
     background-color:#000000;
 }
 QTabWidget::pane {
@@ -328,7 +328,7 @@ QTabBar::tab:selected, QTabBar::tab:last:selected, QTabBar::tab:hover {
 QRadioButton::indicator {
     height: 14px;
     width: 14px;
-    border-style:solid;
+    border-style: solid;
     border-radius:7px;
     border-width: 1px;
 }
