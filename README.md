@@ -12,6 +12,7 @@
 
   ``` shell
   pyinstaller -wD --icon res/img/apple.ico --add-data 'res/QtSheetStyle.qrc:res' --collect-all PyQt5 --hidden-import PyQt5.sip --name ICEHelper_mac Main.py
+  pyinstaller --windowed --icon res/img/apple.ico --add-data 'res/QtSheetStyle.qrc:res' --add-binary="/Users/liu/miniconda3/envs/DeepLearning/lib/libpython3.12.dylib:." --collect-all PyQt5 --hidden-import PyQt5.sip --name ICEHelper_mac Main.py
   ```
 
 + win 打包命令

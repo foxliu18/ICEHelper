@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 
-# Form implementation generated from reading ui file 'D:\code\ICEHelper\res/root.ui'
+# Form implementation generated from reading ui file '/Users/liu/Code/ICEHelper/ui/root.ui'
 #
 # Created by: PyQt5 UI code generator 5.15.11
 #
@@ -31,7 +31,7 @@ class Ui_ICEHelper(object):
         self.gridLayout.addWidget(self.stackedWidget, 0, 0, 1, 1)
         ICEHelper.setCentralWidget(self.centralwidget)
         self.menuBar = QtWidgets.QMenuBar(ICEHelper)
-        self.menuBar.setGeometry(QtCore.QRect(0, 0, 1088, 26))
+        self.menuBar.setGeometry(QtCore.QRect(0, 0, 1088, 37))
         self.menuBar.setObjectName("menuBar")
         self.menuTools = QtWidgets.QMenu(self.menuBar)
         self.menuTools.setObjectName("menuTools")
@@ -44,6 +44,8 @@ class Ui_ICEHelper(object):
         self.actionBMI.setObjectName("actionBMI")
         self.actionExcelColFilter = QtWidgets.QAction(ICEHelper)
         self.actionExcelColFilter.setObjectName("actionExcelColFilter")
+        self.actionExcel = QtWidgets.QAction(ICEHelper)
+        self.actionExcel.setObjectName("actionExcel")
         self.menuTools.addAction(self.actionBMI)
         self.menuOption.addAction(self.actionExcelColFilter)
         self.menuBar.addAction(self.menuTools.menuAction())
@@ -55,8 +57,9 @@ class Ui_ICEHelper(object):
     def retranslateUi(self, ICEHelper):
         _translate = QtCore.QCoreApplication.translate
         ICEHelper.setWindowTitle(_translate("ICEHelper", "ICE Helper"))
-        self.menuTools.setTitle(_translate("ICEHelper", "Tools"))
-        self.menuOption.setTitle(_translate("ICEHelper", "Option"))
+        self.menuTools.setTitle(_translate("ICEHelper", "Calc"))
+        self.menuOption.setTitle(_translate("ICEHelper", "Process"))
         self.actionopen.setText(_translate("ICEHelper", "open"))
         self.actionBMI.setText(_translate("ICEHelper", "BMI"))
         self.actionExcelColFilter.setText(_translate("ICEHelper", "ExcelColFilter"))
+        self.actionExcel.setText(_translate("ICEHelper", "Excel"))

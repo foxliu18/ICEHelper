@@ -32,7 +32,7 @@ class ReadExcelUtil:
         else:
             return None
 
-    def filter_excel(self, filter_list):
+    def filter_excel(self, filter_list, filter_type):
         if len(filter_list) == 0:
             return
         self.df_out_dict.clear()
@@ -42,7 +42,13 @@ class ReadExcelUtil:
         new_df = self.df.copy()
         for col in col_name_list:
             for item in filter_list:
-                if col.startswith(item):
+                if filter_type == 0 and col.startswith(item):
+                    if self.df_out_dict.get(item) is not None:
+                        self.df_out_dict.get(item)[col] = new_df[col].values
+                elif filter_type == 1 and item in col:
+                    if self.df_out_dict.get(item) is not None:
+                        self.df_out_dict.get(item)[col] = new_df[col].values
+                elif filter_type == 2 and col.endswith(item):
                     if self.df_out_dict.get(item) is not None:
                         self.df_out_dict.get(item)[col] = new_df[col].values
         return self.df_out_dict
