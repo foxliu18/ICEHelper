@@ -46,7 +46,7 @@ class Ui_excel_filter_form(object):
         self.slt_file_btn.setMinimumSize(QtCore.QSize(32, 30))
         self.slt_file_btn.setMaximumSize(QtCore.QSize(70, 70))
         self.slt_file_btn.setStyleSheet("#slt_file_btn{\n"
-"border-image: url(:/res/img/file64.svg)\n"
+"border-image: url(:/res/img/addfile32.svg)\n"
 "}\n"
 "")
         self.slt_file_btn.setText("")

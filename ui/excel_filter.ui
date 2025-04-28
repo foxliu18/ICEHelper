@@ -87,7 +87,7 @@
             </property>
             <property name="styleSheet">
              <string notr="true">#slt_file_btn{
-border-image: url(:/res/img/file64.svg)
+border-image: url(:/res/img/addfile32.svg)
 }
 </string>
             </property>

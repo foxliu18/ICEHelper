@@ -25,7 +25,7 @@ if __name__== "__main__":
     if qss_file.open(QFile.ReadOnly | QFile.Text):
         stream = QTextStream(qss_file)
         qss = stream.readAll()
-        app.setStyleSheet(qss)  # 应用样式表
+        # app.setStyleSheet(qss)  # 应用样式表
 
     # app.setStyle("Fusion")  # 使用 Fusion 样式（接近 macOS）
     MainWindow = QtWidgets.QMainWindow()    #QMainWindow装载需要的组件
