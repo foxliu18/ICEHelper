@@ -1,11 +1,10 @@
 import os
 from PyQt5.QtGui import QIcon
 
-from res.excel_filter_ui import Ui_excel_filter_form
+from ui.excel_filter_ui import Ui_excel_filter_form
 from src.utils.ReadExcelUtil import ReadExcelUtil
-from PyQt5.QtWidgets import QMainWindow, QTableWidgetItem, \
+from PyQt5.QtWidgets import QTableWidgetItem, \
     QFileDialog, QWidget
-import res.QtSheetStyle_rc
 import threading
 
 # def resource_path(relative_path):

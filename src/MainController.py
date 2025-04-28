@@ -3,8 +3,7 @@ import sys
 
 from PyQt5 import QtWidgets
 from PyQt5.QtGui import QIcon
-import res.QtSheetStyle_rc
-from res.root_ui import Ui_ICEHelper
+from ui.root_ui import Ui_ICEHelper
 from src.Controller.BMIController import BMIController
 from src.Controller.ExcelFilterController import ExcelFilterController
 
