@@ -22,7 +22,7 @@ class MainController(QtWidgets.QMainWindow, Ui_ICEHelper):
         super(MainController, self).__init__(parent)
         self.setupUi(self)
 
-        self.setWindowIcon(QIcon(':/res/img/apple.svg'))
+        self.setWindowIcon(QIcon(':/res/img/apple.icns'))
         super().setWindowTitle("ICE Helper")  # 设置窗口标题
 
 
@@ -35,7 +35,7 @@ class MainController(QtWidgets.QMainWindow, Ui_ICEHelper):
 
         self.init_connection()
 
-        self.switch_page(self.bmi_page)
+        self.switch_page(self.excel_filter_page)
 
     def init_connection(self):
         self.actionBMI.triggered.connect(lambda : self.switch_page(self.bmi_page))

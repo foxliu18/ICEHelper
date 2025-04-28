@@ -68,26 +68,27 @@
           <item>
            <widget class="QPushButton" name="slt_file_btn">
             <property name="sizePolicy">
-             <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+             <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
               <horstretch>0</horstretch>
               <verstretch>0</verstretch>
              </sizepolicy>
             </property>
             <property name="minimumSize">
              <size>
-              <width>32</width>
+              <width>30</width>
               <height>30</height>
              </size>
             </property>
             <property name="maximumSize">
              <size>
-              <width>70</width>
-              <height>70</height>
+              <width>35</width>
+              <height>35</height>
              </size>
             </property>
             <property name="styleSheet">
              <string notr="true">#slt_file_btn{
-border-image: url(:/res/img/addfile32.svg)
+border: none
+/*border-image: url(:/res/img/addfile32.svg) */
 }
 </string>
             </property>
@@ -304,8 +305,6 @@ border-image: url(:/res/img/addfile32.svg)
    </item>
   </layout>
  </widget>
- <resources>
-  <include location="../res/QtSheetStyle.qrc"/>
- </resources>
+ <resources/>
  <connections/>
 </ui>

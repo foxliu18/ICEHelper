@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 
-# Form implementation generated from reading ui file 'D:\code\ICEHelper\ui/excel_filter.ui'
+# Form implementation generated from reading ui file '/Users/liu/Code/ICEHelper/ui/excel_filter.ui'
 #
 # Created by: PyQt5 UI code generator 5.15.11
 #
@@ -38,15 +38,16 @@ class Ui_excel_filter_form(object):
         self.file_lineEdit.setObjectName("file_lineEdit")
         self.horizontalLayout.addWidget(self.file_lineEdit)
         self.slt_file_btn = QtWidgets.QPushButton(self.frame)
-        sizePolicy = QtWidgets.QSizePolicy(QtWidgets.QSizePolicy.Fixed, QtWidgets.QSizePolicy.Fixed)
+        sizePolicy = QtWidgets.QSizePolicy(QtWidgets.QSizePolicy.Preferred, QtWidgets.QSizePolicy.Preferred)
         sizePolicy.setHorizontalStretch(0)
         sizePolicy.setVerticalStretch(0)
         sizePolicy.setHeightForWidth(self.slt_file_btn.sizePolicy().hasHeightForWidth())
         self.slt_file_btn.setSizePolicy(sizePolicy)
-        self.slt_file_btn.setMinimumSize(QtCore.QSize(32, 30))
-        self.slt_file_btn.setMaximumSize(QtCore.QSize(70, 70))
+        self.slt_file_btn.setMinimumSize(QtCore.QSize(30, 30))
+        self.slt_file_btn.setMaximumSize(QtCore.QSize(35, 35))
         self.slt_file_btn.setStyleSheet("#slt_file_btn{\n"
-"border-image: url(:/res/img/addfile32.svg)\n"
+"border: none\n"
+"/*border-image: url(:/res/img/addfile32.svg) */\n"
 "}\n"
 "")
         self.slt_file_btn.setText("")
@@ -133,4 +134,3 @@ class Ui_excel_filter_form(object):
         self.filter_pbtn.setText(_translate("excel_filter_form", "筛选"))
         self.checkBox.setText(_translate("excel_filter_form", "分文件输出"))
         self.output_pushButton.setText(_translate("excel_filter_form", "输出"))
-import res.QtSheetStyle_rc

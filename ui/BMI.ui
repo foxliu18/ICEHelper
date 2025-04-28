@@ -89,6 +89,7 @@
         </property>
         <property name="font">
          <font>
+          <family>微软雅黑</family>
           <pointsize>16</pointsize>
           <weight>75</weight>
           <bold>true</bold>
@@ -133,7 +134,7 @@
         </property>
         <property name="font">
          <font>
-          <family>微软雅黑</family>
+          <family>Hiragino Sans GB</family>
           <pointsize>14</pointsize>
           <weight>75</weight>
           <bold>true</bold>
@@ -157,7 +158,10 @@
         </property>
         <property name="font">
          <font>
+          <family>Monaco</family>
           <pointsize>48</pointsize>
+          <weight>50</weight>
+          <bold>false</bold>
          </font>
         </property>
         <property name="text">
@@ -220,6 +224,7 @@
         </property>
         <property name="font">
          <font>
+          <family>微软雅黑</family>
           <pointsize>16</pointsize>
           <weight>75</weight>
           <bold>true</bold>
@@ -308,6 +313,7 @@
         </property>
         <property name="font">
          <font>
+          <family>微软雅黑</family>
           <pointsize>16</pointsize>
           <weight>75</weight>
           <bold>true</bold>
@@ -401,7 +407,10 @@
         </property>
         <property name="font">
          <font>
+          <family>Monaco</family>
           <pointsize>28</pointsize>
+          <weight>50</weight>
+          <bold>false</bold>
          </font>
         </property>
         <property name="text">
@@ -452,6 +461,7 @@
         </property>
         <property name="font">
          <font>
+          <family>微软雅黑</family>
           <pointsize>16</pointsize>
           <weight>75</weight>
           <bold>true</bold>
@@ -868,6 +878,14 @@
               <height>60</height>
              </size>
             </property>
+            <property name="font">
+             <font>
+              <family>Monaco</family>
+              <pointsize>18</pointsize>
+              <weight>50</weight>
+              <bold>false</bold>
+             </font>
+            </property>
            </widget>
           </item>
           <item>
@@ -886,10 +904,10 @@
             </property>
             <property name="font">
              <font>
-              <family>微软雅黑</family>
+              <family>Monaco</family>
               <pointsize>28</pointsize>
-              <weight>75</weight>
-              <bold>true</bold>
+              <weight>50</weight>
+              <bold>false</bold>
              </font>
             </property>
             <property name="text">
@@ -1034,6 +1052,7 @@
           </property>
           <property name="font">
            <font>
+            <family>微软雅黑</family>
             <pointsize>16</pointsize>
             <weight>75</weight>
             <bold>true</bold>
@@ -1058,6 +1077,14 @@
             <height>60</height>
            </size>
           </property>
+          <property name="font">
+           <font>
+            <family>Monaco</family>
+            <pointsize>14</pointsize>
+            <weight>50</weight>
+            <bold>false</bold>
+           </font>
+          </property>
          </widget>
         </item>
         <item row="0" column="3" rowspan="2">
@@ -1076,7 +1103,10 @@
           </property>
           <property name="font">
            <font>
-            <pointsize>28</pointsize>
+            <family>Monaco</family>
+            <pointsize>36</pointsize>
+            <weight>50</weight>
+            <bold>false</bold>
            </font>
           </property>
           <property name="text">
@@ -1127,6 +1157,7 @@
           </property>
           <property name="font">
            <font>
+            <family>微软雅黑</family>
             <pointsize>16</pointsize>
             <weight>75</weight>
             <bold>true</bold>

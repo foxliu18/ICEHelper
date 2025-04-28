@@ -191,7 +191,7 @@ QComboBox::drop-down {
     		border-left: 1px solid #c0c0c0;
 }
 QComboBox::down-arrow {
-        image: url(res/img/combobox_on.svg);
+        image: url(:res/img/combobox_on.svg);
 }
 /* 下拉列表样式 */
 QComboBox QAbstractItemView {

@@ -1,4 +1,6 @@
 import os
+
+from PyQt5.QtCore import QSize
 from PyQt5.QtGui import QIcon
 
 from ui.excel_filter_ui import Ui_excel_filter_form
@@ -29,7 +31,9 @@ class ExcelFilterController(QWidget):
         # 设置 UI
         self.ui.setupUi(self)
 
-        # self.ui.slt_file_btn.setIcon(QIcon(':/res/img/file70.svg'))
+        self.ui.slt_file_btn.setIcon(QIcon(':/res/img/addfile32.svg'))
+        self.ui.slt_file_btn.setIconSize(QSize(34, 34))
+
 
         self.ui.input_tableWidget.horizontalScrollBar().setMinimum(1000)
         self.ui.checkBox.setChecked(True)

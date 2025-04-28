@@ -9,6 +9,7 @@ class ReadExcelUtil:
     def __init__(self):
         self.df_out_dict = {}
         self.df = None
+        self.save_col_name = "患者编号" # 导出数据需要保留的列名
         print("init readExcelUtil")
 
 
@@ -59,7 +60,7 @@ class ReadExcelUtil:
             self.df_out_dict[item] = pd.DataFrame()
         self.df_out_dict['first_col'] = pd.DataFrame()
         self.df_out_dict['first_col'] = pd.DataFrame({
-            self.df.columns[0] : self.df[self.df.columns[0]].to_numpy()
+            self.save_col_name : self.df[self.save_col_name].to_numpy()
         })
         # 列驱动处理逻辑
         for col in self.df.columns:
@@ -112,7 +113,7 @@ class ReadExcelUtil:
             # 拆分模式：每个键单独生成文件
 
             # 显式获取列名
-            col_name = self.df.columns[0]
+            col_name = self.save_col_name
             for item in filter_list:
                 df = new_df.get(item)
                 df.insert(0, col_name, first_col_df[col_name].to_numpy())
@@ -138,7 +139,7 @@ class ReadExcelUtil:
                     max_index = len(df.columns)
 
             # 显式获取列名
-            col_name = first_col_df.columns[0]
+            col_name = self.save_col_name
             # 直接构建DataFrame避免多次内存分配
             out = pd.DataFrame({
                 col_name: first_col_df[col_name].to_numpy()  # 使用更现代的to_numpy()
